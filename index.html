@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Rabbia 💗</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    background:radial-gradient(circle at top,#FFD1DC,#F8A1C4,#B03060);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* ================= ENVELOPE ================= */
+.envelope{
+    width:300px;
+    height:200px;
+    background:linear-gradient(145deg,#FFB6C1,#E75480);
+    position:relative;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+    transition:.6s ease;
+}
+
+.envelope::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:#B03060;
+    clip-path:polygon(0 0,50% 65%,100% 0);
+    border-radius:12px;
+}
+
+.envelope:hover{
+    transform:scale(1.08);
+}
+
+/* ================= CONTENT ================= */
+.content{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,#F8A1C4,#B03060);
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    padding:40px;
+    overflow-y:auto;
+}
+
+.content.show{
+    display:flex;
+    animation:fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(.92)}
+    to{opacity:1;transform:scale(1)}
+}
+
+/* ================= CAKE ================= */
+.cake{
+    position:relative;
+    width:180px;
+    margin-top:10px;
+    animation:pop .8s ease forwards;
+}
+
+@keyframes pop{
+    0%{transform:scale(0)}
+    100%{transform:scale(1)}
+}
+
+.layer{
+    height:45px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#FFD1DC,#FFB6C1);
+    margin-bottom:6px;
+    box-shadow:0 8px 0 #E75480;
+}
+
+.layer:nth-child(2){
+    width:85%;
+    margin:auto;
+}
+
+.layer:nth-child(3){
+    width:70%;
+    margin:auto;
+}
+
+.candle{
+    width:10px;
+    height:35px;
+    background:#fff;
+    position:absolute;
+    top:-35px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:5px;
+}
+
+.flame{
+    width:14px;
+    height:14px;
+    background:#FFD700;
+    border-radius:50%;
+    position:absolute;
+    top:-14px;
+    left:-2px;
+    animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(1)}
+    to{transform:scale(1.2)}
+}
+
+/* ================= TEXT ================= */
+h1{
+    margin:25px 0 10px;
+    font-size:2.6rem;
+    color:#FFD1DC;
+    text-shadow:0 0 18px rgba(255,182,193,.8);
+    text-align:center;
+}
+
+p{
+    opacity:.95;
+    max-width:700px;
+    text-align:center;
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+/* ================= GALLERY ================= */
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    width:100%;
+    max-width:900px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:16px;
+    border:3px solid #FFD1DC;
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+    transition:.4s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.07);
+    border-color:#FFB6C1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" id="env"></div>
+
+<div class="content" id="content">
+
+    <div class="cake">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+    </div>
+
+    <h1>Happy Birthday Rabbia 💗</h1>
+    <p>
+        I am sorry Rabss.  
+        Love you so much.  
+        Sweetest soul with a hard shell, prettiest girl.  
+        Wishing you a beautiful birthday year ahead.  
+        Stay the same, keep shining — cutest friend 🌸 FROM SHARABS
+    </p>
+
+    <div class="gallery">
+        <img src="image.png">
+        <img src="1.jpeg">
+        <img src="5.jpeg">
+        <img src="3.jpeg">
+        <img src="4.jpeg">
+        <img src="5.png">
+    </div>
+
+</div>
+
+<script>
+document.getElementById("env").onclick = () =>{
+    document.getElementById("env").style.display="none";
+    document.getElementById("content").classList.add("show");
+}
+</script>
+
+</body>
+</html>
